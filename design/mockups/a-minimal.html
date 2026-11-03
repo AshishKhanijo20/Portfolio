@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mockup A — Minimal Professional</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#fafaf9;--surface:#fff;--text:#1c1917;--muted:#78716c;--line:#e7e5e4;--accent:#2563eb;--accent-soft:#eff6ff}
+  [data-theme=dark]{--bg:#0c0a09;--surface:#1c1917;--text:#f5f5f4;--muted:#a8a29e;--line:#292524;--accent:#60a5fa;--accent-soft:#172554}
+  *{box-sizing:border-box;margin:0}
+  body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;transition:background .3s,color .3s}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+  nav{display:flex;justify-content:space-between;align-items:center;padding:24px 0}
+  .logo{font-family:Fraunces,serif;font-weight:600;font-size:20px}
+  .links{display:flex;gap:28px;align-items:center;font-size:14px;color:var(--muted)}
+  .links a{color:inherit;text-decoration:none}.links a:hover{color:var(--text)}
+  .pill{border:1px solid var(--line);border-radius:999px;padding:4px 10px;font-size:12px;cursor:pointer;background:none;color:var(--text)}
+  .hero{display:grid;grid-template-columns:1.4fr 1fr;gap:56px;align-items:center;padding:88px 0 96px}
+  .eyebrow{display:inline-flex;gap:8px;align-items:center;font-size:13px;color:var(--muted);margin-bottom:20px}
+  .dot{width:8px;height:8px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 4px #22c55e22}
+  h1{font-family:Fraunces,serif;font-weight:500;font-size:clamp(40px,6vw,64px);line-height:1.05;letter-spacing:-.02em}
+  h1 em{color:var(--accent);font-style:normal}
+  .lead{font-size:18px;color:var(--muted);margin:24px 0 32px;max-width:520px}
+  .cta{display:flex;gap:12px;flex-wrap:wrap}
+  .btn{padding:12px 20px;border-radius:10px;font-size:15px;font-weight:500;text-decoration:none;border:1px solid var(--line);color:var(--text)}
+  .btn.primary{background:var(--text);color:var(--bg);border-color:var(--text)}
+  .photo{aspect-ratio:4/5;border-radius:24px;background:linear-gradient(140deg,var(--accent-soft),var(--line));display:grid;place-items:center;font-family:Fraunces,serif;font-size:72px;color:var(--accent);position:relative}
+  .photo small{position:absolute;bottom:16px;font-family:Inter;font-size:12px;color:var(--muted)}
+  section{padding:72px 0;border-top:1px solid var(--line)}
+  h2{font-family:Fraunces,serif;font-weight:500;font-size:32px;margin-bottom:32px}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+  .stat b{display:block;font-family:Fraunces,serif;font-size:36px;font-weight:500}
+  .stat span{font-size:14px;color:var(--muted)}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:24px;transition:transform .2s,box-shadow .2s}
+  .card:hover{transform:translateY(-4px);box-shadow:0 12px 32px #0000000f}
+  .card h3{font-size:17px;margin:12px 0 8px}
+  .card p{font-size:14px;color:var(--muted)}
+  .tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:16px}
+  .tag{font-size:12px;background:var(--accent-soft);color:var(--accent);padding:3px 9px;border-radius:6px}
+  .kicker{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+  .chat{position:fixed;right:24px;bottom:24px;background:var(--text);color:var(--bg);border-radius:999px;padding:14px 20px;font-size:14px;font-weight:500;box-shadow:0 8px 24px #0003;cursor:pointer}
+  @media(max-width:760px){.hero,.grid,.stats{grid-template-columns:1fr 1fr}.hero{grid-template-columns:1fr}.links a{display:none}.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav>
+    <div class="logo">Ashish Khanijo</div>
+    <div class="links">
+      <a href="#">About</a><a href="#">Projects</a><a href="#">Blog</a><a href="#">Contact</a>
+      <button class="pill">EN / DE</button>
+      <button class="pill" onclick="document.documentElement.dataset.theme=document.documentElement.dataset.theme==='dark'?'':'dark'">◐</button>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div>
+      <div class="eyebrow"><span class="dot"></span>Open to AI/ML & GenAI roles · Vienna, Austria</div>
+      <h1>I build <em>AI agents</em> on top of solid backend engineering.</h1>
+      <p class="lead">Software engineer with 4.5 years in C#/.NET, Python and SQL — now building LLM agents and MCP integrations as IT Innovation Intern at the IAEA.</p>
+      <div class="cta"><a class="btn primary" href="#">View projects</a><a class="btn" href="#">Download CV</a></div>
+    </div>
+    <div class="photo">AK<small>photo goes here</small></div>
+  </header>
+
+  <section>
+    <div class="stats">
+      <div class="stat"><b>4.5+</b><span>years backend engineering</span></div>
+      <div class="stat"><b>IAEA</b><span>AI innovation, Vienna</span></div>
+      <div class="stat"><b>8.6</b><span>CGPA, BITS Pilani</span></div>
+      <div class="stat"><b>3</b><span>languages · EN · DE · HI</span></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Selected work</h2>
+    <div class="grid">
+      <div class="card"><span class="kicker">Capstone · 2025</span><h3>GenAI IT Service Desk</h3><p>Stateful AI assistant over structured ticket data with persistent, ticket-linked memory.</p><div class="tags"><span class="tag">FastAPI</span><span class="tag">PostgreSQL</span><span class="tag">LLM</span></div></div>
+      <div class="card"><span class="kicker">IAEA · 2026</span><h3>SDLC Automation Agent</h3><p>AI agent prototype automating development lifecycle tasks via custom tools and MCP.</p><div class="tags"><span class="tag">MCP</span><span class="tag">Agents</span></div></div>
+      <div class="card"><span class="kicker">Python · 2023</span><h3>Algorithmic Trading</h3><p>Four back-tested strategies, deployed on AWS EC2 with scheduled real-time execution.</p><div class="tags"><span class="tag">Python</span><span class="tag">AWS</span></div></div>
+    </div>
+  </section>
+</div>
+<div class="chat">💬 Ask my AI about me</div>
+</body>
+</html>

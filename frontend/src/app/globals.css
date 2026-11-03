@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+/* Dark mode is driven by <html data-theme="dark"> (set by ThemeToggle / the no-flash script). */
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+/*
+ * THEME: "Alpine" (mockup C).
+ * To switch designs, change these tokens + the fonts in app/[lang]/layout.tsx.
+ * Components only use the semantic names below — never raw hex colors.
+ */
+:root {
+  --background: #f4f1ea; /* page — warm paper */
+  --surface: #fffdf8;    /* cards, panels */
+  --foreground: #1f2a24; /* main text */
+  --muted: #5f675e;      /* secondary text */
+  --line: #ddd6c8;       /* borders */
+  --accent: #c2410c;     /* CTAs, highlights — alpenglow orange */
+  --accent-foreground: #ffffff;
+  --pine: #2f5d50;       /* secondary brand — forest */
+  --sky: #dbe7e4;        /* hero backdrop */
+}
+
+[data-theme="dark"] {
+  --background: #121816;
+  --surface: #1a2320;
+  --foreground: #ecebe4;
+  --muted: #94a39b;
+  --line: #2a3631;
+  --accent: #fb923c;
+  --accent-foreground: #1a1208;
+  --pine: #6fb39c;
+  --sky: #1a2522;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-pine: var(--pine);
+  --color-sky: var(--sky);
+  --font-sans: var(--font-body);
+  --font-serif: var(--font-display);
+}
+
+html {
+  color-scheme: light;
+}
+html[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  transition: background-color 0.2s, color 0.2s;
+}

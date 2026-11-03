@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mockup C — Alpine</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#f4f1ea;--surface:#fffdf8;--text:#1f2a24;--muted:#6b7369;--line:#ddd6c8;--accent:#c2410c;--pine:#2f5d50;--sky:#dbe7e4}
+  [data-theme=dark]{--bg:#121816;--surface:#1a2320;--text:#ecebe4;--muted:#94a39b;--line:#2a3631;--accent:#fb923c;--pine:#6fb39c;--sky:#1d2a27}
+  *{box-sizing:border-box;margin:0}
+  body{font-family:"DM Sans",sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 24px;position:relative}
+  nav{display:flex;justify-content:space-between;align-items:center;padding:24px 0;position:relative;z-index:2}
+  .logo{font-family:"DM Serif Display";font-size:22px}.logo span{color:var(--accent)}
+  .links{display:flex;gap:26px;font-size:14px;color:var(--muted);align-items:center}
+  .pill{border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-size:12px;background:none;color:var(--text);cursor:pointer}
+  .hero{position:relative;background:var(--sky);overflow:hidden;padding-bottom:0}
+  .hero-inner{display:grid;grid-template-columns:1.3fr 1fr;gap:48px;align-items:center;padding:56px 0 200px;position:relative;z-index:2}
+  .alt{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--pine);font-weight:700}
+  h1{font-family:"DM Serif Display";font-weight:400;font-size:clamp(40px,6vw,66px);line-height:1.05;margin:14px 0 18px}
+  h1 em{color:var(--accent)}
+  .lead{font-size:18px;color:var(--muted);max-width:500px}
+  .cta{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap}
+  .btn{padding:12px 22px;border-radius:999px;font-weight:500;text-decoration:none;color:var(--text);border:1px solid var(--text)}
+  .btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+  .photo{width:280px;height:280px;border-radius:50%;justify-self:center;border:6px solid var(--surface);background:var(--line);display:grid;place-items:center;font-family:"DM Serif Display";font-size:64px;color:var(--pine);box-shadow:0 20px 50px #0002}
+  .mountains{position:absolute;left:0;right:0;bottom:-2px;width:100%;height:240px;z-index:1}
+  .topo{position:absolute;inset:0;opacity:.35;z-index:0}
+  h2{font-family:"DM Serif Display";font-weight:400;font-size:34px;margin-bottom:8px}
+  .sub{color:var(--muted);margin-bottom:36px}
+  section{padding:80px 0}
+  /* altitude timeline */
+  .climb{position:relative;padding-left:40px;border-left:2px dashed var(--pine)}
+  .camp{position:relative;margin-bottom:36px}
+  .camp::before{content:"▲";position:absolute;left:-52px;top:0;color:var(--accent);font-size:18px;background:var(--bg);padding:2px}
+  .camp .alt{color:var(--accent)}
+  .camp h3{font-size:19px;margin:2px 0}
+  .camp p{color:var(--muted);font-size:15px}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:transform .2s}
+  .card:hover{transform:translateY(-4px)}
+  .thumb{height:120px;background:linear-gradient(160deg,var(--sky),var(--line))}
+  .card .in{padding:20px}
+  .card h3{font-size:17px;margin-bottom:6px}.card p{font-size:14px;color:var(--muted)}
+  .chat{position:fixed;right:24px;bottom:24px;background:var(--pine);color:#fff;border-radius:999px;padding:14px 20px;font-weight:500;font-size:14px;box-shadow:0 10px 30px #0003;cursor:pointer}
+  @media(max-width:760px){.hero-inner{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.links a{display:none}.photo{width:200px;height:200px}}
+</style>
+</head>
+<body>
+<div class="hero">
+  <svg class="topo" viewBox="0 0 800 400" preserveAspectRatio="none" fill="none" stroke="var(--pine)" stroke-width="1">
+    <path d="M0 300 Q200 200 400 260 T800 220"/><path d="M0 270 Q200 170 400 230 T800 190"/><path d="M0 240 Q200 140 400 200 T800 160"/>
+    <path d="M0 210 Q200 110 400 170 T800 130"/><path d="M0 180 Q200 80 400 140 T800 100"/><path d="M0 150 Q200 50 400 110 T800 70"/>
+  </svg>
+  <div class="wrap">
+    <nav>
+      <div class="logo">ashish<span>.</span></div>
+      <div class="links"><a>About</a><a>Projects</a><a>Blog</a><a>Contact</a>
+        <button class="pill">EN · DE</button>
+        <button class="pill" onclick="document.documentElement.dataset.theme=document.documentElement.dataset.theme==='dark'?'':'dark'">☾</button></div>
+    </nav>
+    <div class="hero-inner">
+      <div>
+        <div class="alt">Vienna · 48.2° N · Open to AI/ML roles</div>
+        <h1>Engineer by trade, <em>climber</em> by heart.</h1>
+        <p class="lead">I build AI agents and GenAI systems on 4.5 years of backend engineering — currently at the IAEA in Vienna.</p>
+        <div class="cta"><a class="btn primary">See my work</a><a class="btn">Download CV</a></div>
+      </div>
+      <div class="photo">AK</div>
+    </div>
+  </div>
+  <svg class="mountains" viewBox="0 0 1440 240" preserveAspectRatio="none">
+    <path fill="var(--pine)" opacity=".35" d="M0 240 L0 150 L180 70 L320 140 L520 30 L700 130 L860 60 L1040 150 L1220 50 L1440 140 L1440 240Z"/>
+    <path fill="var(--pine)" opacity=".7" d="M0 240 L0 190 L220 120 L400 180 L600 100 L780 190 L980 120 L1180 190 L1340 130 L1440 170 L1440 240Z"/>
+    <path fill="var(--bg)" d="M0 240 L0 220 Q360 200 720 222 T1440 215 L1440 240Z"/>
+  </svg>
+</div>
+
+<div class="wrap">
+  <section>
+    <h2>The ascent</h2>
+    <p class="sub">My career, one camp at a time.</p>
+    <div class="climb">
+      <div class="camp"><div class="alt">Summit push · Jun 2026 – now</div><h3>IT Innovation Intern — IAEA, Vienna</h3><p>AI agents for the SDLC with MCP, Power Platform automation, secure AI deployment.</p></div>
+      <div class="camp"><div class="alt">High camp · 2021 – 2026</div><h3>Software Engineer — HCL Technologies</h3><p>C#/.NET backends, SQL optimization, data pipelines for AI-based monitoring.</p></div>
+      <div class="camp"><div class="alt">Base camp · 2020 – 2021</div><h3>Apprenticeship — HCL Technologies</h3><p>Foundations in C# and .NET, alongside a BITS Pilani degree (CGPA 8.6).</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Expeditions</h2>
+    <p class="sub">Projects I've taken from idea to summit.</p>
+    <div class="grid">
+      <div class="card"><div class="thumb"></div><div class="in"><h3>GenAI Service Desk</h3><p>Stateful assistant with ticket-linked memory · FastAPI, Postgres</p></div></div>
+      <div class="card"><div class="thumb"></div><div class="in"><h3>SDLC Agent</h3><p>Agent with custom tools and MCP integrations · IAEA</p></div></div>
+      <div class="card"><div class="thumb"></div><div class="in"><h3>Algo Trading</h3><p>4 back-tested strategies, live on AWS EC2 · Python</p></div></div>
+    </div>
+  </section>
+</div>
+<div class="chat">🏔️ Ask my AI guide</div>
+</body>
+</html>

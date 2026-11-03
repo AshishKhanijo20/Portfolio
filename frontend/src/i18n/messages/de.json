@@ -1,0 +1,33 @@
+{
+  "meta": {
+    "title": "Ashish Khanijo — KI- & Softwareentwickler",
+    "description": "Softwareentwickler in Wien, der KI-Agenten sowie LLM- und MCP-Integrationen auf Basis von 4,5 Jahren Backend-Erfahrung entwickelt."
+  },
+  "nav": {
+    "home": "Start",
+    "about": "Über mich",
+    "projects": "Projekte",
+    "blog": "Blog",
+    "contact": "Kontakt",
+    "menu": "Hauptnavigation"
+  },
+  "controls": {
+    "theme": "Dunkelmodus umschalten",
+    "language": "Sprache wechseln"
+  },
+  "home": {
+    "status": "Offen für KI/ML- & GenAI-Rollen · Wien, Österreich",
+    "headline": "Entwickler aus Beruf,",
+    "headlineAccent": "Bergsteiger aus Leidenschaft.",
+    "photoAlt": "Porträt von Ashish Khanijo",
+    "lead": "Softwareentwickler mit 4,5 Jahren Erfahrung in C#/.NET, Python und SQL — aktuell entwickle ich LLM-Agenten und MCP-Integrationen als IT Innovation Intern bei der IAEO.",
+    "ctaProjects": "Projekte ansehen",
+    "ctaContact": "Kontakt aufnehmen"
+  },
+  "placeholder": {
+    "comingSoon": "Diese Seite folgt in Phase 2."
+  },
+  "footer": {
+    "builtWith": "Erstellt mit Next.js & FastAPI"
+  }
+}

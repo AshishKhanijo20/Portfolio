@@ -1,0 +1,33 @@
+# Ashish Khanijo — Portfolio Website
+
+Personal portfolio for a software engineer targeting AI/ML & GenAI roles in Austria/Europe.
+Source of truth for personal content: `Ashish_Khanijo_CV_new.pdf`.
+
+## Stack
+- **frontend/** — Next.js 16 (App Router, Cache Components on) + TypeScript + Tailwind v4 + Framer Motion
+  - Next 16 differs from older versions: read `frontend/node_modules/next/dist/docs/` before using an API. Middleware is now `src/proxy.ts`.
+  - i18n is built-in (no next-intl): `src/proxy.ts` redirects to `/en` or `/de`; `[lang]` is the root param; server code calls `getDictionary()` / `getLocale()` from `src/i18n/dictionaries.ts`; client components get strings as props.
+  - Dark mode: `<html data-theme="dark">` + Tailwind `dark:` variant; colors are CSS tokens in `src/app/globals.css`.
+  - Design: "Alpine" (mockup C). Theme = tokens in `globals.css` + fonts in `app/[lang]/layout.tsx` + decorations in `components/alpine/`. Use only semantic color classes (`bg-surface`, `text-accent`, `text-pine`…), never raw hex, so the design stays swappable.
+  - Photo pending: `components/ui/avatar.tsx` shows initials until `public/photo.jpg` exists.
+  - Don't use `new Date()`/`Math.random()` in server render — Cache Components rejects it.
+- **frontend/content/** — projects & blog as MDX, one file per language (`slug.en.mdx`, `slug.de.mdx`)
+- **backend/** — FastAPI + SQLModel + PostgreSQL (Neon), Dockerized
+- **AI chatbot** — DeepSeek via OpenAI-compatible client; provider/model/base URL come from env so it can be swapped
+- **Email** — Resend for contact-form alerts
+- **Deploy** — Vercel (frontend), Render/Fly.io (backend), GitHub Actions CI
+
+## Roadmap
+1. Foundation: repo, design mockups (`design/mockups/`), Next.js scaffold, i18n, layout  ← current
+2. Content pages: Home, About, Skills, Projects + Blog templates
+3. Backend: `/contact` endpoint, spam protection, rate limiting, email alerts
+4. AI chatbot: `/chat` streaming, CV-grounded knowledge, daily token cap, hand-off to contact
+5. Deploy: Vercel + Render/Fly + Neon + domain + CI/CD
+6. Polish: SEO/OG, analytics, a11y, Lighthouse, admin page
+
+## Conventions
+- Every user-facing string must exist in both `src/i18n/messages/en.json` and `de.json` (the `Dictionary` type comes from en.json).
+- Verify with `npm run lint` and `npm run build` in `frontend/`.
+- Never commit secrets; document required vars in `.env.example`.
+- Chatbot must only answer from the knowledge files; refuse unrelated requests; enforce token/cost caps.
+- Phone number is shown on the site (owner's choice) — render it via click-to-reveal to reduce scraping.

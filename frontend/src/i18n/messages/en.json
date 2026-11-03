@@ -1,0 +1,33 @@
+{
+  "meta": {
+    "title": "Ashish Khanijo — AI & Software Engineer",
+    "description": "Software engineer in Vienna building AI agents, LLM and MCP integrations on top of 4.5 years of backend engineering."
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "blog": "Blog",
+    "contact": "Contact",
+    "menu": "Main navigation"
+  },
+  "controls": {
+    "theme": "Toggle dark mode",
+    "language": "Change language"
+  },
+  "home": {
+    "status": "Open to AI/ML & GenAI roles · Vienna, Austria",
+    "headline": "Engineer by trade,",
+    "headlineAccent": "climber by heart.",
+    "photoAlt": "Portrait of Ashish Khanijo",
+    "lead": "Software engineer with 4.5 years in C#/.NET, Python and SQL — now building LLM agents and MCP integrations as IT Innovation Intern at the IAEA.",
+    "ctaProjects": "View projects",
+    "ctaContact": "Get in touch"
+  },
+  "placeholder": {
+    "comingSoon": "This page is coming in Phase 2."
+  },
+  "footer": {
+    "builtWith": "Built with Next.js & FastAPI"
+  }
+}

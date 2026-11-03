@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mockup B — Developer Terminal</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#0b0f14;--panel:#111821;--line:#1e2a38;--text:#d6e2ee;--muted:#6b7f94;--green:#4ade80;--amber:#fbbf24;--cyan:#22d3ee;--pink:#f472b6}
+  [data-theme=light]{--bg:#f6f8fa;--panel:#fff;--line:#d0d7de;--text:#1f2328;--muted:#656d76;--green:#1a7f37;--amber:#9a6700;--cyan:#0969da;--pink:#bf3989}
+  *{box-sizing:border-box;margin:0}
+  body{font-family:"JetBrains Mono",monospace;background:var(--bg);color:var(--text);font-size:15px;line-height:1.7;
+    background-image:radial-gradient(var(--line) 1px,transparent 1px);background-size:24px 24px}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+  nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0;font-size:14px}
+  nav .logo{color:var(--green)} nav .logo::after{content:"_";animation:blink 1s steps(1) infinite}
+  @keyframes blink{50%{opacity:0}}
+  .links{display:flex;gap:22px;color:var(--muted)} .links span:hover{color:var(--cyan);cursor:pointer}
+  .term{margin:64px 0;background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;box-shadow:0 30px 80px #0006}
+  .bar{display:flex;gap:8px;padding:12px 16px;border-bottom:1px solid var(--line);align-items:center}
+  .bar i{width:12px;height:12px;border-radius:50%;display:block}
+  .bar small{margin-left:12px;color:var(--muted);font-size:12px}
+  .body{padding:28px 32px;display:grid;grid-template-columns:auto 1fr;gap:36px}
+  .avatar{width:150px;height:150px;border-radius:10px;border:1px dashed var(--green);display:grid;place-items:center;color:var(--green);font-size:40px}
+  .p{color:var(--green)} .c{color:var(--cyan)} .a{color:var(--amber)} .k{color:var(--pink)} .m{color:var(--muted)}
+  h1{font-family:"Space Grotesk",sans-serif;font-size:clamp(34px,5vw,52px);line-height:1.1;margin:6px 0 10px}
+  .cursor{display:inline-block;width:10px;height:20px;background:var(--green);vertical-align:middle;animation:blink 1s steps(1) infinite}
+  h2{font-family:"Space Grotesk";font-size:24px;margin:56px 0 20px} h2::before{content:"## ";color:var(--muted)}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:20px;transition:border-color .2s}
+  .card:hover{border-color:var(--green)}
+  .card h3{font-family:"Space Grotesk";font-size:17px;margin:6px 0}
+  .card p{font-size:13px;color:var(--muted)}
+  .card .stack{margin-top:14px;font-size:12px;color:var(--amber)}
+  .skills{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:20px 24px;font-size:14px}
+  .chat{position:fixed;right:24px;bottom:24px;background:var(--panel);border:1px solid var(--green);color:var(--green);border-radius:8px;padding:12px 16px;font-size:13px;cursor:pointer}
+  button{font:inherit;background:none;border:1px solid var(--line);color:var(--muted);border-radius:6px;padding:2px 8px;cursor:pointer}
+  @media(max-width:760px){.body{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.links span{display:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav>
+    <span class="logo">~/ashish</span>
+    <div class="links"><span>./about</span><span>./projects</span><span>./blog</span><span>./contact</span>
+      <button>en|de</button><button onclick="document.documentElement.dataset.theme=document.documentElement.dataset.theme==='light'?'':'light'">theme</button></div>
+  </nav>
+
+  <div class="term">
+    <div class="bar"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i><small>ashish@vienna: ~</small></div>
+    <div class="body">
+      <div class="avatar">AK</div>
+      <div>
+        <div><span class="p">$</span> whoami</div>
+        <h1>Ashish Khanijo</h1>
+        <div class="m">// Software Engineer → AI/ML & GenAI Engineer</div>
+        <br>
+        <div><span class="p">$</span> cat profile.json</div>
+        <div>{</div>
+        <div>&nbsp;&nbsp;<span class="c">"now"</span>: <span class="a">"IT Innovation Intern @ IAEA, Vienna"</span>,</div>
+        <div>&nbsp;&nbsp;<span class="c">"building"</span>: [<span class="a">"LLM agents"</span>, <span class="a">"MCP integrations"</span>],</div>
+        <div>&nbsp;&nbsp;<span class="c">"experience"</span>: <span class="k">4.5</span>, <span class="m">// years · C#/.NET, Python, SQL</span></div>
+        <div>&nbsp;&nbsp;<span class="c">"open_to_work"</span>: <span class="k">true</span></div>
+        <div>}</div>
+        <br>
+        <div><span class="p">$</span> <span class="cursor"></span></div>
+      </div>
+    </div>
+  </div>
+
+  <h2>projects</h2>
+  <div class="grid">
+    <div class="card"><span class="m">01 · capstone</span><h3>GenAI Service Desk</h3><p>Stateful AI assistant with ticket-linked conversational memory.</p><div class="stack">fastapi · sqlmodel · postgres</div></div>
+    <div class="card"><span class="m">02 · iaea</span><h3>SDLC Agent</h3><p>Agent automating dev-lifecycle tasks through custom tools and MCP.</p><div class="stack">mcp · llm-agents</div></div>
+    <div class="card"><span class="m">03 · python</span><h3>Algo Trading</h3><p>4 strategies back-tested on CAGR, Sharpe, drawdown; live on EC2.</p><div class="stack">python · aws-ec2 · cron</div></div>
+  </div>
+
+  <h2>skills</h2>
+  <div class="skills">
+    <div><span class="c">ai_ml</span>       = [LLM agents, MCP, GenAI, TensorFlow, Keras, OpenCV, Pandas]</div>
+    <div><span class="c">backend</span>     = [C#/.NET, Python, FastAPI, SQLModel, PostgreSQL, SQL Server]</div>
+    <div><span class="c">tools</span>       = [Docker, AWS EC2, Git, Power Automate, Copilot Studio]</div>
+  </div>
+  <br><br><br>
+</div>
+<div class="chat">&gt; ask_ai("about ashish")</div>
+</body>
+</html>
