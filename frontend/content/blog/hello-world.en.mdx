@@ -1,0 +1,38 @@
+{/*
+  BLOG POST TEMPLATE — this sample is a draft: visible in `npm run dev`, hidden in production.
+  New post: copy to content/blog/<slug>.en.mdx (+ optional <slug>.de.mdx), set draft: false to publish.
+*/}
+
+export const meta = {
+  title: "Sample post: how this blog works",
+  summary: "A draft showing the formatting available in posts — headings, lists, code and quotes.",
+  date: "2026-11-04",
+  tags: ["meta"],
+  draft: true,
+};
+
+Posts are written in **MDX** — Markdown that can also include React components.
+
+## Formatting
+
+- Lists like this one
+- [Links](https://github.com/AshishKhanijo20)
+- Inline `code`
+
+```python
+from fastapi import FastAPI
+
+app = FastAPI()
+
+@app.get("/health")
+def health():
+    return {"status": "ok"}
+```
+
+> Quotes look like this.
+
+## Ideas to write about
+
+- Building an agent with MCP — lessons learned
+- Cutting LLM token costs in a stateful assistant
+- From .NET backend engineer to GenAI engineer

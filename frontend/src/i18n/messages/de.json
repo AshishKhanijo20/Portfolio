@@ -22,10 +22,65 @@
     "photoAlt": "Porträt von Ashish Khanijo",
     "lead": "Softwareentwickler mit 4,5 Jahren Erfahrung in C#/.NET, Python und SQL — aktuell entwickle ich LLM-Agenten und MCP-Integrationen als IT Innovation Intern bei der IAEO.",
     "ctaProjects": "Projekte ansehen",
-    "ctaContact": "Kontakt aufnehmen"
+    "ctaContact": "Kontakt aufnehmen",
+    "featuredEyebrow": "Ausgewählte Arbeiten",
+    "featuredTitle": "Expeditionen",
+    "featuredSub": "Projekte, die ich von der Idee bis zum Gipfel gebracht habe.",
+    "allProjects": "Alle Projekte",
+    "ctaTitle": "Planen Sie Ihren nächsten Aufstieg?",
+    "ctaText": "Ich suche Rollen als KI/ML- und GenAI-Engineer in Österreich und ganz Europa. Lassen Sie uns sprechen.",
+    "ctaAbout": "Mehr über mich"
   },
-  "placeholder": {
-    "comingSoon": "Diese Seite folgt in Phase 2."
+  "about": {
+    "eyebrow": "Über mich",
+    "title": "Vom Backend-Entwickler zum KI-Builder.",
+    "story": [
+      "Ich bin Softwareentwickler in Wien. Viereinhalb Jahre habe ich bei HCL Technologies Backend-Systeme mit C#/.NET, Python und SQL entwickelt — zuerst in der Ausbildung, dann in Vollzeit — und parallel mein Studium an der BITS Pilani abgeschlossen.",
+      "Dabei hat mich KI gepackt: Datenpipelines für KI-gestütztes Monitoring, ein Konferenzpaper zu Machine Learning für nachhaltiges Design und ein GenAI-Service-Desk-Assistent als Abschlussprojekt. Heute bin ich IT Innovation Intern bei der IAEO und entwickle LLM-Agenten und MCP-Integrationen — und sorge dafür, dass sie sicher betrieben werden.",
+      "Jetzt suche ich eine Rolle als KI/ML- oder GenAI-Engineer in Österreich oder Europa, wo solides Backend-Engineering auf moderne KI trifft."
+    ],
+    "ascentTitle": "Der Aufstieg",
+    "ascentSub": "Meine Laufbahn, Lager für Lager.",
+    "skillsTitle": "Ausrüstung",
+    "skillsSub": "Die Werkzeuge, die ich auf jeder Tour dabeihabe.",
+    "educationTitle": "Ausbildung",
+    "certsTitle": "Zertifikate",
+    "languagesTitle": "Sprachen",
+    "beyondTitle": "Abseits des Codes",
+    "beyondText": "Wenn ich nicht an der Tastatur sitze, bin ich meist irgendwo weit oben. Ich habe einen Grundkurs im Bergsteigen absolviert und war im Himalaya trekken — die Geduld und Planung, die das erfordert, nehme ich direkt in die Softwareentwicklung mit. Außerdem liegt mir Nachhaltigkeit am Herzen, was mich zu meiner PLMSS-Forschung geführt hat."
+  },
+  "projects": {
+    "eyebrow": "Projekte",
+    "title": "Expeditionen",
+    "sub": "Was ich gebaut, erforscht und ausgeliefert habe — von Enterprise-Backends bis zu KI-Agenten.",
+    "inProgress": "In Arbeit",
+    "completed": "Abgeschlossen",
+    "back": "Alle Projekte",
+    "github": "Code",
+    "demo": "Live-Demo",
+    "paper": "Paper",
+    "readMore": "Mehr lesen"
+  },
+  "blog": {
+    "eyebrow": "Blog",
+    "title": "Feldnotizen",
+    "sub": "Texte über KI-Agenten, MCP und Softwareentwicklung.",
+    "empty": "Die ersten Beiträge sind in Arbeit — schauen Sie bald wieder vorbei.",
+    "back": "Alle Beiträge",
+    "draft": "Entwurf"
+  },
+  "contact": {
+    "eyebrow": "Kontakt",
+    "title": "Lassen Sie uns sprechen.",
+    "sub": "Recruiter, Hiring Manager oder Entwickler-Kollege — ich freue mich auf Ihre Nachricht.",
+    "formSoon": "Ein Kontaktformular folgt in Kürze. Bis dahin erreichen Sie mich direkt:",
+    "email": "E-Mail",
+    "phone": "Telefon",
+    "showPhone": "Nummer anzeigen",
+    "location": "Standort"
+  },
+  "common": {
+    "fallbackNote": "Dieser Inhalt ist nur auf Englisch verfügbar."
   },
   "footer": {
     "builtWith": "Erstellt mit Next.js & FastAPI"

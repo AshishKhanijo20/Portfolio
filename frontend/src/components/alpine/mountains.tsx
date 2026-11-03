@@ -1,11 +1,12 @@
 /** Layered mountain silhouette; the last layer blends into the page background. */
-export function Mountains({ className = "" }: { className?: string }) {
+export function Mountains({ size = "lg" }: { size?: "lg" | "sm" }) {
+  const height = size === "lg" ? "h-32 sm:h-56" : "h-16 sm:h-24";
   return (
     <svg
       aria-hidden
       viewBox="0 0 1440 240"
       preserveAspectRatio="none"
-      className={`pointer-events-none absolute inset-x-0 -bottom-px h-32 w-full sm:h-56 ${className}`}
+      className={`pointer-events-none absolute inset-x-0 -bottom-px w-full ${height}`}
     >
       <path
         className="fill-pine/35"
@@ -21,7 +22,7 @@ export function Mountains({ className = "" }: { className?: string }) {
 }
 
 /** Faint topographic contour lines for hero backgrounds. */
-export function Contours({ className = "" }: { className?: string }) {
+export function Contours() {
   return (
     <svg
       aria-hidden
@@ -29,7 +30,7 @@ export function Contours({ className = "" }: { className?: string }) {
       preserveAspectRatio="none"
       fill="none"
       strokeWidth="1"
-      className={`pointer-events-none absolute inset-0 h-full w-full stroke-pine opacity-30 ${className}`}
+      className="pointer-events-none absolute inset-0 h-full w-full stroke-pine opacity-30"
     >
       {[0, 30, 60, 90, 120, 150].map((d) => (
         <path key={d} d={`M0 ${300 - d} Q200 ${200 - d} 400 ${260 - d} T800 ${220 - d}`} />

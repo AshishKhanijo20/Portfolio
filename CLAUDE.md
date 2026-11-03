@@ -11,16 +11,21 @@ Source of truth for personal content: `Ashish_Khanijo_CV_new.pdf`.
   - Design: "Alpine" (mockup C). Theme = tokens in `globals.css` + fonts in `app/[lang]/layout.tsx` + decorations in `components/alpine/`. Use only semantic color classes (`bg-surface`, `text-accent`, `text-pine`…), never raw hex, so the design stays swappable.
   - Photo pending: `components/ui/avatar.tsx` shows initials until `public/photo.jpg` exists.
   - Don't use `new Date()`/`Math.random()` in server render — Cache Components rejects it.
-- **frontend/content/** — projects & blog as MDX, one file per language (`slug.en.mdx`, `slug.de.mdx`)
+- **frontend/content/** — projects & blog as MDX via `@next/mdx`, one file per language (`slug.en.mdx`, `slug.de.mdx`)
+  - Each file `export const meta = {...}` (types `ProjectMeta` / `PostMeta` in `src/lib/content.ts`); no frontmatter.
+  - Missing `.de.mdx` → English shown with a notice. Files starting with `_` are templates (ignored). Blog `draft: true` = dev only.
+  - Element styling for MDX lives in `src/mdx-components.tsx`.
+- **frontend/src/data/profile.ts** — structured CV data (experience, skills, education…) as `{ en, de }` fields; About/Home/Contact read from it. Will also feed the chatbot knowledge base.
+- Unknown slugs call `notFound()` (renders 404 UI + noindex; HTTP status is 200 due to streaming — known, revisit in Phase 6).
 - **backend/** — FastAPI + SQLModel + PostgreSQL (Neon), Dockerized
 - **AI chatbot** — DeepSeek via OpenAI-compatible client; provider/model/base URL come from env so it can be swapped
 - **Email** — Resend for contact-form alerts
 - **Deploy** — Vercel (frontend), Render/Fly.io (backend), GitHub Actions CI
 
 ## Roadmap
-1. Foundation: repo, design mockups (`design/mockups/`), Next.js scaffold, i18n, layout  ← current
-2. Content pages: Home, About, Skills, Projects + Blog templates
-3. Backend: `/contact` endpoint, spam protection, rate limiting, email alerts
+1. Foundation: repo, design mockups (`design/mockups/`), Next.js scaffold, i18n, layout ✅
+2. Content pages: Home, About (+skills), Projects + Blog templates, Contact details ✅
+3. Backend: `/contact` endpoint, spam protection, rate limiting, email alerts  ← next
 4. AI chatbot: `/chat` streaming, CV-grounded knowledge, daily token cap, hand-off to contact
 5. Deploy: Vercel + Render/Fly + Neon + domain + CI/CD
 6. Polish: SEO/OG, analytics, a11y, Lighthouse, admin page
