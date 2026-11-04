@@ -1,0 +1,30 @@
+export const meta = {
+  title: "GenAI IT-Service-Desk-Assistent",
+  summary: "Ein zustandsbehafteter GenAI-Assistent über strukturierten Ticketdaten, mit persistentem, ticketbezogenem Gesprächsgedächtnis.",
+  period: "Nov 2025 – heute",
+  date: "2025-11",
+  context: "BITS Pilani · Abschlussprojekt",
+  tags: ["Python", "FastAPI", "SQLModel", "PostgreSQL", "LLM"],
+  status: "in-progress",
+  featured: true,
+  links: {},
+};
+
+## Das Problem
+
+IT-Service-Desks verfügen über wertvolle, strukturierte Ticketdaten — trotzdem behandeln die meisten KI-Assistenten jedes Gespräch so, als finge es bei null an. Kontext geht verloren, und jede Rückfrage kostet weitere teure API-Aufrufe.
+
+## Ansatz
+
+- Einen **datengetriebenen Service Desk** entworfen, der strukturierte Tickets mit einem **zustandsbehafteten GenAI-Assistenten** verbindet.
+- **Persistentes Gesprächsgedächtnis** über ticketbezogene Dialog-Threads umgesetzt, damit der Assistent über mehrere Interaktionen hinweg argumentieren kann.
+- Untersuchung von **tool-gestützten LLMs** und **Human-in-the-Loop**-Workflows für freigabepflichtige Aktionen.
+- Ansätze, um **API-Aufrufe und Token-Verbrauch zu senken**, ohne die Antwortqualität zu verlieren.
+
+## Stack
+
+FastAPI · SQLModel · PostgreSQL · Python · LLM-APIs
+
+## Nächste Schritte
+
+Evaluierung von Antwortqualität vs. Token-Kosten sowie ein Demo-Deployment.

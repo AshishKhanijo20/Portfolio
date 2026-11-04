@@ -1,0 +1,34 @@
+export const meta = {
+  title: "Algorithmisches Handelssystem",
+  summary: "Vier per Backtest bewertete Handelsstrategien (CAGR, Sharpe Ratio, Max. Drawdown) — auf AWS EC2 für die zeitgesteuerte Live-Ausführung deployt.",
+  period: "Mai 2023 – Jul 2023",
+  date: "2023-05",
+  context: "BITS Pilani",
+  tags: ["Python", "AWS EC2", "yfinance", "Alpha Vantage", "MetaTrader"],
+  status: "completed",
+  featured: true,
+  links: {},
+};
+
+## Überblick
+
+Ein durchgängiges System, das Handelsstrategien entwirft, per Backtest prüft und automatisch ausführt.
+
+## Strategien
+
+| Strategie | Signale |
+| --- | --- |
+| Portfolio-Rebalancing | Periodische Umschichtung nach Performance |
+| Resistance Breakout | Preis-/Volumen-Ausbrüche |
+| Renko + OBV | Renko-Bricks mit On-Balance-Volume |
+| Renko + MACD | Renko-Bricks mit MACD-Kreuzungen |
+
+Eingesetzte Indikatoren: **MACD**, **RSI** und **Bollinger-Bänder**.
+
+## Bewertung
+
+Jede Strategie wurde per Backtest anhand von **CAGR**, **Sharpe Ratio** und **maximalem Drawdown** verglichen.
+
+## Deployment
+
+Das System läuft auf **AWS EC2** mit **Cron**-Scheduling für die Echtzeit-Ausführung über **MetaTrader**. Marktdaten kommen von **yfinance** und der **Alpha-Vantage-API**.

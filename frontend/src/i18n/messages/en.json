@@ -22,10 +22,65 @@
     "photoAlt": "Portrait of Ashish Khanijo",
     "lead": "Software engineer with 4.5 years in C#/.NET, Python and SQL — now building LLM agents and MCP integrations as IT Innovation Intern at the IAEA.",
     "ctaProjects": "View projects",
-    "ctaContact": "Get in touch"
+    "ctaContact": "Get in touch",
+    "featuredEyebrow": "Selected work",
+    "featuredTitle": "Expeditions",
+    "featuredSub": "Projects I've taken from idea to summit.",
+    "allProjects": "All projects",
+    "ctaTitle": "Planning your next ascent?",
+    "ctaText": "I'm looking for AI/ML and GenAI engineering roles in Austria and across Europe. Let's talk.",
+    "ctaAbout": "More about me"
   },
-  "placeholder": {
-    "comingSoon": "This page is coming in Phase 2."
+  "about": {
+    "eyebrow": "About",
+    "title": "From backend engineer to AI builder.",
+    "story": [
+      "I'm a software engineer based in Vienna. I spent four and a half years at HCL Technologies building backend systems in C#/.NET, Python and SQL — first as an apprentice, then as a full-time engineer — while completing my degree at BITS Pilani in parallel.",
+      "Along the way I got hooked on AI: data pipelines for AI-based monitoring, a conference paper on machine learning for sustainable design, and a GenAI service-desk assistant for my capstone. Today I'm an IT Innovation Intern at the IAEA, building LLM agents and MCP integrations — and making sure they're deployed safely.",
+      "I'm now looking for an AI/ML or GenAI engineering role in Austria or Europe, where solid backend engineering meets modern AI."
+    ],
+    "ascentTitle": "The ascent",
+    "ascentSub": "My career, one camp at a time.",
+    "skillsTitle": "Gear",
+    "skillsSub": "The tools I carry on every climb.",
+    "educationTitle": "Education",
+    "certsTitle": "Certifications",
+    "languagesTitle": "Languages",
+    "beyondTitle": "Beyond the code",
+    "beyondText": "When I'm not at a keyboard, I'm usually somewhere high. I've completed a Basic Mountaineering Course and trekked in the Himalayas — the patience and planning it takes carry straight over into engineering. I also care about sustainability, which is what drew me to my PLMSS research."
+  },
+  "projects": {
+    "eyebrow": "Projects",
+    "title": "Expeditions",
+    "sub": "Things I've built, researched and shipped — from enterprise backends to AI agents.",
+    "inProgress": "In progress",
+    "completed": "Completed",
+    "back": "All projects",
+    "github": "Code",
+    "demo": "Live demo",
+    "paper": "Paper",
+    "readMore": "Read more"
+  },
+  "blog": {
+    "eyebrow": "Blog",
+    "title": "Field notes",
+    "sub": "Writing about AI agents, MCP and engineering.",
+    "empty": "The first posts are on their way — check back soon.",
+    "back": "All posts",
+    "draft": "Draft"
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "Let's talk.",
+    "sub": "Recruiter, hiring manager or fellow engineer — I'd love to hear from you.",
+    "formSoon": "A contact form is coming soon. Until then, reach me directly:",
+    "email": "Email",
+    "phone": "Phone",
+    "showPhone": "Show number",
+    "location": "Location"
+  },
+  "common": {
+    "fallbackNote": "This content is only available in English."
   },
   "footer": {
     "builtWith": "Built with Next.js & FastAPI"
