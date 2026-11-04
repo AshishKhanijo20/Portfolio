@@ -17,7 +17,13 @@ Source of truth for personal content: `Ashish_Khanijo_CV_new.pdf`.
   - Element styling for MDX lives in `src/mdx-components.tsx`.
 - **frontend/src/data/profile.ts** — structured CV data (experience, skills, education…) as `{ en, de }` fields; About/Home/Contact read from it. Will also feed the chatbot knowledge base.
 - Unknown slugs call `notFound()` (renders 404 UI + noindex; HTTP status is 200 due to streaming — known, revisit in Phase 6).
-- **backend/** — FastAPI + SQLModel + PostgreSQL (Neon), Dockerized
+- **backend/** — FastAPI + SQLModel + PostgreSQL (Neon in prod), Dockerized, managed with **uv** (see `backend/README.md`)
+  - Layout: `app/{main,config,db,models,schemas}.py`, `app/routers/`, `app/services/`. Config only via env (`app/config.py`, `.env.example`).
+  - Local DB: `docker compose up -d db` → host port **5433** (a native Windows Postgres 16 service owns 5432 — don't touch it).
+  - Tests use in-memory SQLite via dependency overrides (`get_engine`, `get_email_sender`) — no Docker needed. Run `uv run pytest`, `uv run ruff check .`, `uv run ruff format .`.
+  - Email is pluggable: `ResendEmailSender` when `RESEND_API_KEY` is set, else `ConsoleEmailSender` (logs).
+  - Privacy: never store raw IPs — only salted hashes (`IP_HASH_SALT`).
+  - Windows gotcha: don't round-trip files through PowerShell 5.1 `Get-Content`/`Set-Content` — it corrupts UTF-8 (—, ü). Use the Edit/Write tools.
 - **AI chatbot** — DeepSeek via OpenAI-compatible client; provider/model/base URL come from env so it can be swapped
 - **Email** — Resend for contact-form alerts
 - **Deploy** — Vercel (frontend), Render/Fly.io (backend), GitHub Actions CI
@@ -25,8 +31,8 @@ Source of truth for personal content: `Ashish_Khanijo_CV_new.pdf`.
 ## Roadmap
 1. Foundation: repo, design mockups (`design/mockups/`), Next.js scaffold, i18n, layout ✅
 2. Content pages: Home, About (+skills), Projects + Blog templates, Contact details ✅
-3. Backend: `/contact` endpoint, spam protection, rate limiting, email alerts  ← next
-4. AI chatbot: `/chat` streaming, CV-grounded knowledge, daily token cap, hand-off to contact
+3. Backend: `/contact` endpoint, spam protection, rate limiting, email alerts, contact form ✅ (Resend key pending)
+4. AI chatbot  ← next: `/chat` streaming, CV-grounded knowledge, daily token cap, hand-off to contact
 5. Deploy: Vercel + Render/Fly + Neon + domain + CI/CD
 6. Polish: SEO/OG, analytics, a11y, Lighthouse, admin page
 

@@ -1,9 +1,10 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import { getDictionary, getLocale } from "@/i18n/dictionaries";
 import { contact, tr } from "@/data/profile";
 import { Container } from "@/components/ui/container";
 import { PageHero } from "@/components/alpine/page-hero";
 import { PhoneReveal } from "@/components/contact/phone-reveal";
+import { ContactForm } from "@/components/contact/contact-form";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getDictionary();
@@ -45,17 +46,22 @@ export default async function ContactPage() {
   return (
     <>
       <PageHero eyebrow={t.contact.eyebrow} title={t.contact.title} sub={t.contact.sub} />
-      <Container className="pt-8 pb-24">
-        {/* Phase 3: contact form (recruiter / feedback) goes here */}
-        <p className="text-muted">{t.contact.formSoon}</p>
-        <dl className="mt-8 max-w-xl divide-y divide-line rounded-2xl border border-line bg-surface">
-          {rows.map((r) => (
-            <div key={r.label} className="flex items-center justify-between gap-4 px-6 py-4">
-              <dt className="text-sm text-muted">{r.label}</dt>
-              <dd>{r.value}</dd>
-            </div>
-          ))}
-        </dl>
+      <Container className="grid gap-12 pt-8 pb-24 lg:grid-cols-[1.4fr_1fr]">
+        <section>
+          <h2 className="mb-6 font-serif text-3xl">{t.contact.form.title}</h2>
+          <ContactForm t={t.contact.form} locale={locale} />
+        </section>
+        <aside>
+          <h2 className="mb-6 font-serif text-3xl">{t.contact.directTitle}</h2>
+          <dl className="divide-y divide-line rounded-2xl border border-line bg-surface">
+            {rows.map((r) => (
+              <div key={r.label} className="flex items-center justify-between gap-4 px-6 py-4">
+                <dt className="text-sm text-muted">{r.label}</dt>
+                <dd className="truncate">{r.value}</dd>
+              </div>
+            ))}
+          </dl>
+        </aside>
       </Container>
     </>
   );
