@@ -1,0 +1,32 @@
+﻿# Local development.
+#   docker compose up -d db      -> just Postgres (run the API with `uv run uvicorn ... --reload`)
+#   docker compose up --build    -> Postgres + API in containers (production-like)
+services:
+  db:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_USER: portfolio
+      POSTGRES_PASSWORD: portfolio
+      POSTGRES_DB: portfolio
+    ports:
+      - "5433:5432" # host port 5433: a native Windows Postgres already uses 5432
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U portfolio"]
+      interval: 3s
+      retries: 10
+
+  api:
+    build: ./backend
+    environment:
+      DATABASE_URL: postgresql+psycopg://portfolio:portfolio@db:5432/portfolio
+      CORS_ORIGINS: http://localhost:3000
+    ports:
+      - "8000:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+
+volumes:
+  pgdata:
