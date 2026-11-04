@@ -1,4 +1,4 @@
-﻿# Local development.
+# Local development.
 #   docker compose up -d db      -> just Postgres (run the API with `uv run uvicorn ... --reload`)
 #   docker compose up --build    -> Postgres + API in containers (production-like)
 services:

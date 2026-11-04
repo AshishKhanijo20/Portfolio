@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import Link from "next/link";
 import { getDictionary, getLocale } from "@/i18n/dictionaries";
 import { formatDate, listEntries } from "@/lib/content";
